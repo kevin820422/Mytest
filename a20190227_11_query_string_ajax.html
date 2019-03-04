@@ -24,12 +24,12 @@
         let result = document.querySelector('#result');
 
         fetch(`./a20190227_09_query_string.php?a=${a}&b=${b}`)
-        .then(function(response){
-            return response.text();
-        })
-        .then (function(txt){
-            result.innerHTML=txt
-        })
+            .then(function (response) {
+                return response.text();
+            })
+            .then(function (txt) {
+                result.innerHTML = txt
+            })
 
     }
 </script>
