@@ -1,0 +1,6 @@
+INSERT INTO `address_book` (`sid`, `name`, `email`, `birthday`, `mobile`, `address`) VALUES
+(NULL, '許晉瑜', 'benjamin@ggg.com', '1993-04-04', '0979', '台北市大安區'),
+(NULL, 'Benjamin', 'kevin@ggg.com', '1993-04-04', '0975', '新北市板橋區'),
+(NULL, 'Benjamin', 'kevin@ggg.com', '1993-04-04', '0975', '新北市板橋區'),
+(NULL, 'Benjamin', 'kevin@ggg.com', '1993-04-04', '0975', '新北市板橋區'),
+(NULL, '許晉瑜', 'benjamin@ggg.com', '1993-04-04', '0979', '台北市大安區');

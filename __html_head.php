@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <script src="./js/underscore.js"></script>
     <script src="./js/jquery-3.3.1.js"></script>
     <script src="./bootstrap/js/bootstrap.bundle.js"></script>
 </head>

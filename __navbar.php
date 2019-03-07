@@ -3,9 +3,9 @@
     background-color: #e0d011;
 }
 
-
-
 </style>
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -18,8 +18,12 @@
                 <li class="nav-item <?=$page_name=='index_' ? 'active':'' ?>">
                     <a class="nav-link" href="index_.php">Home</a>
                 </li>
+                
                 <li class="nav-item <?=$page_name=='data_list' ? 'active':'' ?>">
                     <a class="nav-link" href="data_list.php">列表</a>
+                </li>
+                <li class="nav-item <?=$page_name=='data_list' ? 'active':'' ?>">
+                    <a class="nav-link" href="data_list2.php">列表2</a>
                 </li>
                 <li class="nav-item <?=$page_name=='data_insert' ? 'active':'' ?>">
                     <a class="nav-link" href="data_insert.php">新增</a>
