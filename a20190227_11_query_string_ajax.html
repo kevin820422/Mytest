@@ -21,6 +21,7 @@
     function calc() {
         let a = encodeURIComponent(document.querySelector('#a').value);
         let b = encodeURIComponent(document.querySelector('#b').value);
+        //使用encodeURIComponent（）函數編碼URI組件。
         let result = document.querySelector('#result');
 
         fetch(`./a20190227_09_query_string.php?a=${a}&b=${b}`)
