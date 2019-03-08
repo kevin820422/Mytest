@@ -1,6 +1,6 @@
 <style>
 .active{
-    background-color: #e0d011;
+    background-color: #0C98FA;
 }
 
 </style>
@@ -22,7 +22,7 @@
                 <li class="nav-item <?=$page_name=='data_list' ? 'active':'' ?>">
                     <a class="nav-link" href="data_list.php">列表</a>
                 </li>
-                <li class="nav-item <?=$page_name=='data_list' ? 'active':'' ?>">
+                <li class="nav-item <?=$page_name=='data_list2' ? 'active':'' ?>">
                     <a class="nav-link" href="data_list2.php">列表2</a>
                 </li>
                 <li class="nav-item <?=$page_name=='data_insert' ? 'active':'' ?>">

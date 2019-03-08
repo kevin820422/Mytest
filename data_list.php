@@ -13,7 +13,10 @@ $total_rows = $t_stmt->fetch(PDO::FETCH_NUM)[0];
 
 //總頁數
 $total_pages = ceil($total_rows / $per_page);
-$sql = sprintf("SELECT * FROM address_book ORDER BY sid DESC LIMIT %s, %s", ($page - 1) * $per_page, $per_page);
+//降冪排列
+//$sql = sprintf("SELECT * FROM address_book ORDER BY sid DESC LIMIT %s, %s", ($page - 1) * $per_page, $per_page);
+//升冪排列
+$sql = sprintf("SELECT * FROM address_book ORDER BY sid LIMIT %s, %s", ($page - 1) * $per_page, $per_page);
 $stmt = $pdo->query($sql);
 
 if ($page < 1) $page = 1;
@@ -70,7 +73,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <td><?= $row['name'] ?></td>
                 <td><?= $row['email'] ?></td>
                 <td><?= $row['mobile'] ?></td>
-                <td><?= $row['address'] ?></td>
+                <!-- <td><?=htmlentities($row['address']) ?></td> -->
+                <td><?= strip_tags($row['address']) ?></td>
                 <td><?= $row['birthday'] ?></td>
             </tr>
             <?php endforeach ?>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const doSomething1 = () => {
+            return new Promise((resolve, reject) => {
+                const t = Math.floor(Math.random() * 2000) + 1000;
+                setTimeout(function () {
+                    resolve('doSomething1');
+                }, t);
+            });
+        };
+        const doSomething2 = () => {
+            return new Promise((resolve, reject) => {
+                const t = Math.floor(Math.random() * 2000) + 1000;
+                setTimeout(function () {
+                    resolve('doSomething2');
+                }, t);
+            });
+        };
+        const doSomething3 = () => {
+            return new Promise((resolve, reject) => {
+                const t = Math.floor(Math.random() * 2000) + 1000;
+                setTimeout(function () {
+                    resolve('doSomething3');
+                }, t);
+            });
+        };
+        doSomething2()
+            .then(result => {
+                console.log(result);
+                return doSomething3();
+            })
+            .then(result => {
+                console.log(result);
+                return doSomething1();
+            })
+            .then(result => {
+                console.log(result);
+            });
+    </script>
+</body>
+
+</html>
