@@ -36,15 +36,15 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="col-lg-12">
             <nav>
                 <ul class="pagination pagination-sm">
-                <li class="page-item"><a class="page-link <?= $page<=1 ?'disable':'' ?>" href="?page=<?= $page-1 ?>">Previous</a></li>
+                    <li class="page-item"><a class="page-link <?= $page <= 1 ? 'disable' : '' ?>" href="?page=<?= $page - 1 ?>">Previous</a></li>
                     <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
                     <li class="page-item <?= $page == $i ? 'active' : '' ?>">
                         <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
                     </li>
                     <?php endfor ?>
                     <li class="page-item">
-                    
-                    <a class="page-link <?= $page>=$total_pages ?'disable':'' ?>" href="?page=<?= $page+1 ?>">Next</a>
+
+                        <a class="page-link <?= $page >= $total_pages ? 'disable' : '' ?>" href="?page=<?= $page + 1 ?>">Next</a>
                     </li>
                 </ul>
             </nav>
@@ -55,12 +55,14 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <table class="table border">
         <thead>
             <tr>
+                <th scope="col"><i class="fas fa-edit"></i></th>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Mobile</th>
                 <th scope="col">Address</th>
                 <th scope="col">Birthday</th>
+                <th scope="col"><i class="fas fa-trash-alt"></i></th>
             </tr>
         </thead>
         <tbody>
@@ -69,16 +71,30 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <!-- <?php $i += 1; ?> -->
             <tr>
                 <!-- <td><?= $i ?></td> -->
+                <td>
+                    <a href="data_edit.php?sid=<?= $row['sid'] ?>"><i class="fas fa-edit"></i></a>
+                </td>
                 <td><?= $row['sid'] ?></td>
                 <td><?= $row['name'] ?></td>
                 <td><?= $row['email'] ?></td>
                 <td><?= $row['mobile'] ?></td>
-                <!-- <td><?=htmlentities($row['address']) ?></td> -->
+                <!-- <td><?= htmlentities($row['address']) ?></td> -->
                 <td><?= strip_tags($row['address']) ?></td>
                 <td><?= $row['birthday'] ?></td>
+                <td><a href="javascript:delete_it(<?= $row['sid'] ?>)">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </td>
             </tr>
             <?php endforeach ?>
         </tbody>
     </table>
 </div>
+<script>
+    function delete_it(sid) {
+        if (confirm(`確定要刪除編號為 ${sid} 的資料嗎?`)) {
+            location.href = 'data_delete.php?sid=' + sid;
+        }
+    }
+</script>
 <?php include __DIR__ . '/__html_foot.php'; ?> 

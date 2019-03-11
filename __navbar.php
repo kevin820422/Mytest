@@ -28,6 +28,9 @@
                 <li class="nav-item <?=$page_name=='data_insert' ? 'active':'' ?>">
                     <a class="nav-link" href="data_insert.php">新增</a>
                 </li>
+                <li class="nav-item <?=$page_name=='data_insert2' ? 'active':'' ?>">
+                    <a class="nav-link" href="data_insert2.php">新增2</a>
+                </li>
               
             </ul>
 
