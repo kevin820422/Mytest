@@ -85,7 +85,7 @@ $page_name = 'data_insert2';
         let isPassed = true;
         info_bar.style.display = 'none';
 
-        // 拿到每個欄位的值
+        // 拿到每個欄位的值，並且把他們設定為fsv{}物件的屬性
         const fsv = {};
         for (let v of fields) {
             fsv[v] = fs[v].value;
