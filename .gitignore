@@ -1,3 +1,5 @@
 /vendor/
 
 /bootstrap/
+
+.ds_store

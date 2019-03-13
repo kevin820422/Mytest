@@ -12,10 +12,10 @@
     <form method="get" onsubmit="return false;">
         <input type="text" id="a" placeholder="a">
         +
-        <input type="text" id="b" placeholder="b">
+        <input type="text" id="b" placeholder="b" onchange="calc()">
         <input type="button" onclick="calc()" value="=">
     </form>
-    <span id="result"></span>
+    <span onmouseover="calc()" id="result">hey</span>
 </body>
 <script>
     function calc() {
@@ -25,12 +25,18 @@
         let result = document.querySelector('#result');
 
         fetch(`./a20190227_09_query_string.php?a=${a}&b=${b}`)
-            .then(function (response) {
-                return response.text();
-            })
-            .then(function (txt) {
+            .then(response => response.text())
+            .then(txt =>
                 result.innerHTML = txt
-            })
+            )
+        // fetch(`./a20190227_09_query_string.php?a=${a}&b=${b}`)
+        //     .then(function (response) {
+        //         return response.text();
+        //     })
+        //     .then(function (txt) {
+        //         result.innerHTML = txt
+        //     })
+
 
     }
 </script>

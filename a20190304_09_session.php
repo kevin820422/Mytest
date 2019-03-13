@@ -5,10 +5,12 @@ session_start();
 if (!isset($_SESSION['my'])) {
     $_SESSION['my'] = 1;
 } else {
+    //超過10歸零
     if($_SESSION['my']<10){
         $_SESSION['my']++;
     }else{
-        unset($_SESSION['my']);
+        // unset($_SESSION['my']);
+        $_SESSION['my']=1;
     };
     
 }
