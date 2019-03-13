@@ -45,7 +45,6 @@ echo '<br>';
 echo "$p->name <br>";
 echo "$p->mobile <br>";
 
-
 print_r($p);
 
 

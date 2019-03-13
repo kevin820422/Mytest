@@ -1,5 +1,5 @@
 <?php
-
+require __DIR__ . '/__cred.php';
 require __DIR__ . '/__connect_db.php';
 $page_name = 'data_list2';
 ?>
@@ -13,19 +13,18 @@ $page_name = 'data_list2';
             <nav>
                 <ul class="pagination pagination-sm">
                     <?php 
-                    /*
-                    <li class="page-item"><a class="page-link <?= $page<=1 ?'disable':'' ?>"
-                    href="?page=<?= $page-1 ?>">Previous</a></li>
-                    <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
-                    <li class="page-item <?= $page == $i ? 'active' : '' ?>">
-                        <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
-                    </li>
-                    <?php endfor ?>
-                    <li class="page-item">
-                        <a class="page-link <?= $page>=$total_pages ?'disable':'' ?>"
-                            href="?page=<?= $page+1 ?>">Next</a>
-                    </li>
-                     */?>
+                    
+
+
+
+
+
+
+
+
+
+
+                    ?>
                 </ul>
             </nav>
         </div>
@@ -75,11 +74,10 @@ $page_name = 'data_list2';
                     </tr>`;
     const tr_func = _.template(tr_str);
 
-    const pagi_str =`<li class="page-item <%= active %>">
+    const pagi_str = `<li class="page-item <%= active %>">
                         <a class="page-link" href="#<%= page %>"><%= page %></a>
-                        </li>`
-                        ;
-    const pagi_func = _.template(pagi_str);  
+                        </li>`;
+    const pagi_func = _.template(pagi_str);
 
     const myHashChange = () => {
         let h = location.hash.slice(1);
@@ -96,7 +94,7 @@ $page_name = 'data_list2';
             .then(json => {
                 ori_data = json;
                 console.log(ori_data);
-                 // 資料內容的表格
+                // 資料內容的表格
                 let str = '';
                 for (let s in ori_data.data) {
                     str += tr_func(ori_data.data[s]);
@@ -105,7 +103,7 @@ $page_name = 'data_list2';
 
                 //分頁標記
                 str = '';
-                for(let i=1; i<=ori_data.totalPages; i++){
+                for (let i = 1; i <= ori_data.totalPages; i++) {
                     let active = ori_data.page === i ? 'active' : '';
 
                     str += pagi_func({

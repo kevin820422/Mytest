@@ -10,5 +10,8 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $ex) {
     echo 'Error: ' . $ex->getMessage();
+};
+
+if(! isset($_SESSION)){
+    session_start();
 }
- 

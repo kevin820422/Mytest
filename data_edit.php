@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/__cred.php';
 require __DIR__. '/__connect_db.php';
 $page_name = 'data_edit';
 
