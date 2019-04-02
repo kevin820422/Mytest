@@ -158,7 +158,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                         if(obj.success){
                             info_bar.className = 'alert alert-success';
-                            info_bar.innerHTML = '資料修改成功';
+                            info_bar.innerHTML = '資料修改成功，三秒返回原列，';
                             //更改成功後三秒返回原列表
                             setTimeout(() => {
                                 let back=document.referrer;
