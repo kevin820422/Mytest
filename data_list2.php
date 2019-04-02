@@ -12,19 +12,7 @@ $page_name = 'data_list2';
         <div class="col-lg-12">
             <nav>
                 <ul class="pagination pagination-sm">
-                    <?php 
-                    
 
-
-
-
-
-
-
-
-
-
-                    ?>
                 </ul>
             </nav>
         </div>
@@ -41,7 +29,9 @@ $page_name = 'data_list2';
             </tr>
         </thead>
         <tbody id="data_body">
-            <?php  /*<tbody>
+
+            <?php
+            /*<tbody>
             <!-- <?php $i = 0; ?> -->
             <?php foreach ($rows as $row) : ?>
             <!-- <?php $i += 1; ?> -->
@@ -54,7 +44,7 @@ $page_name = 'data_list2';
                 <td><?= $row['address'] ?></td>
                 <td><?= $row['birthday'] ?></td>
             </tr>
-            <?php endforeach ?>*/ ?>
+            <?php endforeach ?>*/            ?>
         </tbody>
     </table>
 </div>
@@ -72,6 +62,7 @@ $page_name = 'data_list2';
                         <td><%= address %></td>
                         <td><%= birthday %></td>
                     </tr>`;
+    //underscore 功能                
     const tr_func = _.template(tr_str);
 
     const pagi_str = `<li class="page-item <%= active %>">

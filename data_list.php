@@ -15,7 +15,9 @@ $total_rows = $t_stmt->fetch(PDO::FETCH_NUM)[0];
 $total_pages = ceil($total_rows / $per_page);
 //降冪排列
 //$sql = sprintf("SELECT * FROM address_book ORDER BY sid DESC LIMIT %s, %s", ($page - 1) * $per_page, $per_page);
+
 //升冪排列
+//從全部row中指定每頁的第一筆到最後一筆
 $sql = sprintf("SELECT * FROM address_book ORDER BY sid LIMIT %s, %s", ($page - 1) * $per_page, $per_page);
 $stmt = $pdo->query($sql);
 
@@ -50,8 +52,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </nav>
         </div>
     </div>
-    <!-- <div><?= $total_rows ?></div>
-    <div><?= $stmt->rowCount() ?></div> -->
+    <div><?= $total_rows ?></div>
+    <div><?= $stmt->rowCount() ?></div>
     <table class="table border">
         <thead>
             <tr>
@@ -66,11 +68,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tr>
         </thead>
         <tbody>
-            <!-- <?php $i = 0; ?> -->
             <?php foreach ($rows as $row) : ?>
-            <!-- <?php $i += 1; ?> -->
-            <tr>
-                <!-- <td><?= $i ?></td> -->
+            <tr>   
                 <td>
                     <a href="data_edit.php?sid=<?= $row['sid'] ?>"><i class="fas fa-edit"></i></a>
                 </td>
